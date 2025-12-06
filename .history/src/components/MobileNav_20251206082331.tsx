@@ -1,0 +1,44 @@
+import { motion } from 'motion/react';
+import { Home, User, Briefcase, Mail } from 'lucide-react';
+
+interface MobileNavProps {
+  theme?: 'light' | 'dark';
+}
+
+export function MobileNav({ theme = 'dark' }: MobileNavProps) {
+  const navItems = [
+    { name: 'Home', href: '#home', icon: Home },
+    { name: 'About', href: '#about', icon: User },
+    { name: 'Work', href: '#projects', icon: Briefcase },
+    { name: 'Contact', href: '#contact', icon: Mail },
+  ];
+
+  return (
+    <motion.nav
+      initial={{ y: 100 }}
+      animate={{ y: 0 }}
+      transition={{ type: 'spring', stiffness: 100, damping: 20 }}
+      className="md:hidden fixed bottom-4 left-4 right-4 z-50"
+    >
+      <div className="flex items-center justify-around px-4 py-4 rounded-lg backdrop-blur-xl bg-[#131313]/90 border border-[#333] shadow-2xl">
+        {navItems.map((item, index) => (
+          <motion.a
+            key={item.name}
+            href={item.href}
+            className="group flex flex-col items-center gap-1 relative"
+            whileHover={{ scale: 1.1, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+          >
+            <item.icon className="w-5 h-5 text-[#939393] group-hover:text-[var(--primary)] transition-colors duration-300 relative z-10" />
+            <span className="text-[10px] font-mono uppercase tracking-wider text-[#939393] group-hover:text-[var(--primary)] transition-colors duration-300 relative z-10">
+              {item.name}
+            </span>
+          </motion.a>
+        ))}
+      </div>
+    </motion.nav>
+  );
+}
