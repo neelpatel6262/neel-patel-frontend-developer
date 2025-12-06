@@ -119,7 +119,7 @@ MIT License - feel free to use this as a template for your own portfolio.
 **Neel Patel** - Frontend Developer
 
 - Portfolio: [neelpatel-frontend-developer.vercel.app](https://neelpatel-frontend-developer.vercel.app/)
-- GitHub: [@yourusername](https://github.com/yourusername)
+- GitHub: [@yourusername](https://github.com/neelpatel6262)
 
 ---
 
