@@ -9,7 +9,7 @@ export function MobileNav({ theme = 'dark' }: MobileNavProps) {
   const navItems = [
     { name: 'Home', href: '#home', icon: Home },
     { name: 'About', href: '#about', icon: User },
-    { name: 'Work', href: '#projects', icon: Briefcase },
+    { name: 'Work', href: '#vibe-project', icon: Briefcase },
     { name: 'Contact', href: '#contact', icon: Mail },
   ];
 

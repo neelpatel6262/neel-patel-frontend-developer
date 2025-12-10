@@ -8,8 +8,8 @@ export function About() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const skills = [
-    { icon: Palette, title: 'UI/UX Design', description: 'Creating intuitive and beautiful user interfaces' },
     { icon: Code2, title: 'Frontend Dev', description: 'Building responsive web applications' },
+    { icon: Palette, title: 'UI/UX Design', description: 'Creating intuitive and beautiful user interfaces' },
     { icon: Zap, title: 'Performance', description: 'Optimized and fast user experiences' },
     { icon: Heart, title: 'User-Centric', description: 'Design thinking and empathy-driven' },
   ];
@@ -86,8 +86,8 @@ export function About() {
             
             <div className="space-y-6 text-[#939393]">
               <p className="text-lg leading-relaxed font-light">
-                I'm a passionate <span className="font-medium text-white">UI/UX designer</span> and{' '}
-                <span className="font-medium text-white">frontend developer</span> who believes in the perfect
+                I'm a passionate <span className="font-medium text-white">Frontend developer</span> and{' '}
+                <span className="font-medium text-white">UI/UX designer</span> who believes in the perfect
                 synergy between beautiful design and clean code. My work focuses on creating
                 interfaces that are not only visually stunning but also intuitive and accessible.
               </p>

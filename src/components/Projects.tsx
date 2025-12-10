@@ -9,22 +9,22 @@ export function Projects() {
 
   const projects = [
     {
+      title: 'Task Manager',
+      description: 'Your tasks are stored in your browser (localStorage). Your data will persist until your computer explodes or you delete your browser.',
+      tech: ['HTML5', 'CSS3', 'Vanilla JavaScript'],
+      link: 'https://task-manager-eight-wheat-77.vercel.app/',
+    },
+    {
       title: 'AGNCI Webflow Template',
       description: 'A minimal and elegant portfolio website featuring smooth transitions and responsive design.',
-      tech: ['HTML', 'CSS', 'Webflow'],
+      tech: ['HTML5', 'CSS3', 'Responsive Website'],
       link: 'https://agnci-webflow-html-template.vercel.app/',
     },
     {
       title: 'ElectrifyLabs Landing Page',
-      description: 'Modern landing page with glassmorphism effects and stunning visual hierarchy.',
-      tech: ['HTML', 'CSS', 'Design'],
+      description: 'A static website built with pure HTML5 and CSS3, created as a practice project to improve design-to-code conversion skills.',
+      tech: ['HTML5', 'CSS3', 'Using My Own Figma Design'],
       link: 'https://electrifylabs-home-page.vercel.app/',
-    },
-    {
-      title: 'Task Manager',
-      description: 'Dynamic dashboard with interactive charts and real-time data visualization.',
-      tech: ['HTML', 'CSS', 'JavaScript'],
-      link: 'https://task-manager-eight-wheat-77.vercel.app/',
     },
   ];
 

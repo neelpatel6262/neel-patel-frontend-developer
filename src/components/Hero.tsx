@@ -59,13 +59,13 @@ export function Hero({ theme = 'dark' }: HeroProps) {
             className="flex flex-wrap items-center justify-center gap-8 mb-12"
           >
             <div className={`flex items-center gap-3 ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`}>
-              <Palette className="w-5 h-5 text-[var(--primary)]" />
-              <span className="text-lg font-mono">UI/UX Designer</span>
+             <Code2 className="w-5 h-5 text-[var(--primary)]" />
+              <span className="text-lg font-mono">Frontend Developer</span>
             </div>
             <div className={`w-1 h-1 ${theme === 'light' ? 'bg-gray-300' : 'bg-[#333]'}`} />
             <div className={`flex items-center gap-3 ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`}>
-              <Code2 className="w-5 h-5 text-[var(--primary)]" />
-              <span className="text-lg font-mono">Frontend Developer</span>
+           <Palette className="w-5 h-5 text-[var(--primary)]" />
+              <span className="text-lg font-mono">UI/UX designer</span>
             </div>
           </motion.div>
 
