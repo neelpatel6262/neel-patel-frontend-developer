@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Home, User, Briefcase, Mail } from 'lucide-react';
+import { Home, User, Briefcase, Mail, BookOpen } from 'lucide-react';
 
 interface MobileNavProps {
   theme?: 'light' | 'dark';
@@ -10,6 +10,7 @@ export function MobileNav({ theme = 'dark' }: MobileNavProps) {
     { name: 'Home', href: '#home', icon: Home },
     { name: 'About', href: '#about', icon: User },
     { name: 'Work', href: '#vibe-project', icon: Briefcase },
+    { name: 'Blog', href: '#blog', icon: BookOpen },
     { name: 'Contact', href: '#contact', icon: Mail },
   ];
 

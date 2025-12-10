@@ -11,6 +11,7 @@ export function Navbar({ theme, toggleTheme }: NavbarProps) {
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Works', href: '#vibe-project' },
+    { name: 'Blog', href: '#blog' },
     { name: 'Contact', href: '#contact' },
   ];
 

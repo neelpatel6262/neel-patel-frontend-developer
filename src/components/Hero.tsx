@@ -87,7 +87,7 @@ export function Hero({ theme = 'dark' }: HeroProps) {
             className="flex flex-col sm:flex-row gap-6 justify-center items-center"
           >
             <motion.a
-              href="#projects"
+              href="#vibe-project"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="group relative px-8 py-4 border border-[var(--primary)] bg-transparent text-[var(--primary)] rounded-sm font-mono uppercase tracking-widest hover:bg-[var(--primary)] hover:text-[#131313] transition-all duration-300 min-w-[200px]"

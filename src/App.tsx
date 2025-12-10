@@ -11,6 +11,7 @@ import { VibeCodingProject } from './components/VibeCodingProject';
 import { NotionSection } from './components/NotionSection';
 import { Contact } from './components/Contact';
 import { ContactAside } from './components/ContactAside';
+import { Blog } from './components/Blog';
 import { Github, Linkedin, Mail } from 'lucide-react';
 
 export default function App() {
@@ -67,6 +68,8 @@ export default function App() {
           <Projects />
           <div className={`border-t ${theme === 'light' ? 'border-gray-300' : 'border-[#333]'}`} />
           <NotionSection />
+          <div className={`border-t ${theme === 'light' ? 'border-gray-300' : 'border-[#333]'}`} />
+          <Blog />
           <div className={`border-t ${theme === 'light' ? 'border-gray-300' : 'border-[#333]'}`} />
           <Contact />
         </main>
