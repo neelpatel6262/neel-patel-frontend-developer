@@ -3,12 +3,16 @@ import { useInView } from 'motion/react';
 import { useRef } from 'react';
 import { ExternalLink, Sparkles, Zap } from 'lucide-react';
 
-export function VibeCodingProject() {
+interface VibeCodingProjectProps {
+  theme?: 'light' | 'dark';
+}
+
+export function VibeCodingProject({ theme = 'dark' }: VibeCodingProjectProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="vibe-project" className="py-24 px-4 md:px-8 relative bg-[#131313]">
+    <section id="vibe-project" className={`py-24 px-4 md:px-8 relative ${theme === 'light' ? 'bg-white' : 'bg-[#131313]'}`}>
       <div className="max-w-7xl mx-auto relative z-10" ref={ref}>
         {/* Section badge */}
         <motion.div
@@ -17,9 +21,9 @@ export function VibeCodingProject() {
           transition={{ duration: 0.6 }}
           className="flex justify-center mb-8"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#333] bg-[#1a1a1a]">
+          <div className={`inline-flex items-center gap-2 px-3 py-1 border ${theme === 'light' ? 'border-gray-300 bg-gray-50' : 'border-[#333] bg-[#1a1a1a]'}`}>
             <div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)]" />
-            <span className="text-xs font-mono uppercase tracking-widest text-[#939393]">Interactive Showcase</span>
+            <span className={`text-xs font-mono uppercase tracking-widest ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`}>Interactive Showcase</span>
           </div>
         </motion.div>
 
@@ -27,7 +31,7 @@ export function VibeCodingProject() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl md:text-6xl font-bold text-center mb-16 tracking-tight text-white"
+          className={`text-4xl md:text-6xl font-bold text-center mb-16 tracking-tight ${theme === 'light' ? 'text-black' : 'text-white'}`}
         >
           FEATURED <span className="text-[var(--primary)]">EXPERIENCE</span>
         </motion.h2>
@@ -42,7 +46,7 @@ export function VibeCodingProject() {
           whileHover={{ y: -5 }}
           className="group block max-w-5xl mx-auto"
         >
-          <div className="relative p-12 bg-[#131313] border border-[#333] hover:border-[var(--primary)] transition-all duration-500">
+          <div className={`relative p-12 ${theme === 'light' ? 'bg-white border border-gray-300' : 'bg-[#131313] border border-[#333]'} hover:border-[var(--primary)] transition-all duration-500`}>
              {/* Corner accents */}
             <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-[var(--primary)]" />
             <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-[var(--primary)]" />
@@ -52,16 +56,16 @@ export function VibeCodingProject() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Content */}
               <div className="space-y-8">
-                <div className="inline-flex items-center gap-2 px-3 py-1 border border-[var(--primary)] bg-[var(--primary)]/10">
+                <div className={`inline-flex items-center gap-2 px-3 py-1 border border-[var(--primary)] ${theme === 'light' ? 'bg-[var(--primary)]/10 text-[var(--primary)]' : 'bg-[var(--primary)]/10 text-[var(--primary)]'}`}>
                   <div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] animate-pulse" />
-                  <span className="text-xs font-mono uppercase tracking-widest text-[var(--primary)]">Live System</span>
+                  <span className="text-xs font-mono uppercase tracking-widest">Live System</span>
                 </div>
 
-                <h3 className="text-4xl font-bold text-white font-mono uppercase tracking-tight">
+                <h3 className={`text-4xl font-bold font-mono uppercase tracking-tight ${theme === 'light' ? 'text-black' : 'text-white'}`}>
                   Dopamine Menu
                 </h3>
                 
-                <p className="text-lg text-[#939393] leading-relaxed font-light">
+                <p className={`text-lg leading-relaxed font-light ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`}>
                   An interactive application designed to optimize user motivation through organized activity discovery. Features precision interactions and data persistence.
                 </p>
 
@@ -69,7 +73,7 @@ export function VibeCodingProject() {
                   {['React', 'TypeScript', 'Tailwind', 'Motion'].map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 text-xs font-mono uppercase tracking-wider border border-[#333] text-[#939393] bg-[#1a1a1a]"
+                      className={`px-3 py-1 text-xs font-mono uppercase tracking-wider border ${theme === 'light' ? 'border-gray-300 text-gray-700 bg-gray-50' : 'border-[#333] text-[#939393] bg-[#1a1a1a]'}`}
                     >
                       {tech}
                     </span>
@@ -77,7 +81,7 @@ export function VibeCodingProject() {
                 </div>
 
                 <div className="flex items-center gap-3 pt-4">
-                  <div className="px-8 py-4 border border-[var(--primary)] text-[var(--primary)] font-mono uppercase tracking-widest flex items-center gap-3 hover:bg-[var(--primary)] hover:text-[#131313] transition-all duration-300 cursor-pointer">
+                  <div className={`px-8 py-4 border border-[var(--primary)] text-[var(--primary)] font-mono uppercase tracking-widest flex items-center gap-3 hover:bg-[var(--primary)] hover:text-[#131313] transition-all duration-300 cursor-pointer ${theme === 'light' ? 'bg-white' : 'bg-[#131313]'}`}>
                     <span>Initialize</span>
                     <ExternalLink className="w-4 h-4" />
                   </div>
@@ -86,7 +90,7 @@ export function VibeCodingProject() {
 
               {/* Visual element */}
               <div className="relative flex items-center justify-center">
-                <div className="w-full aspect-square border border-[#333] bg-[#1a1a1a] flex items-center justify-center group-hover:border-[var(--primary)]/30 transition-colors duration-500">
+                <div className={`w-full aspect-square border ${theme === 'light' ? 'border-gray-300 bg-gray-50' : 'border-[#333] bg-[#1a1a1a]'} flex items-center justify-center group-hover:border-[var(--primary)]/30 transition-colors duration-500`}>
                   <motion.div
                     animate={{
                       rotate: [0, 45, 90, 135, 180, 225, 270, 315, 360],
@@ -113,7 +117,7 @@ export function VibeCodingProject() {
                 </div>
                 
                 {/* Floating badge */}
-                <div className="absolute -top-4 -right-4 px-4 py-2 bg-[#131313] border border-[var(--primary)] text-[var(--primary)] font-mono text-xs uppercase tracking-widest">
+                <div className={`absolute -top-4 -right-4 px-4 py-2 ${theme === 'light' ? 'bg-white border border-[var(--primary)]' : 'bg-[#131313] border border-[var(--primary)]'} text-[var(--primary)] font-mono text-xs uppercase tracking-widest`}>
                   v2.0
                 </div>
               </div>

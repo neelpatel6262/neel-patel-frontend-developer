@@ -3,7 +3,11 @@ import { useInView } from 'motion/react';
 import { useRef } from 'react';
 import { Github, Linkedin, Mail, ArrowUpRight } from 'lucide-react';
 
-export function Contact() {
+interface ContactProps {
+  theme?: 'light' | 'dark';
+}
+
+export function Contact({ theme = 'dark' }: ContactProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
@@ -43,7 +47,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 px-4 md:px-8 relative bg-[#131313]">
+    <section id="contact" className={`py-24 px-4 md:px-8 relative ${theme === 'light' ? 'bg-white' : 'bg-[#131313]'}`}>
       <div className="max-w-7xl mx-auto relative z-10" ref={ref}>
         {/* Section badge */}
         <motion.div
@@ -52,9 +56,9 @@ export function Contact() {
           transition={{ duration: 0.6 }}
           className="flex justify-center mb-8"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#333] bg-[#1a1a1a]">
+          <div className={`inline-flex items-center gap-2 px-3 py-1 border ${theme === 'light' ? 'border-gray-300 bg-gray-50' : 'border-[#333] bg-[#1a1a1a]'}`}>
             <div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)]" />
-            <span className="text-xs font-mono uppercase tracking-widest text-[#939393]">Communication</span>
+            <span className={`text-xs font-mono uppercase tracking-widest ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`}>Communication</span>
           </div>
         </motion.div>
 
@@ -62,7 +66,7 @@ export function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl md:text-6xl font-bold text-center mb-6 text-white tracking-tight"
+          className={`text-4xl md:text-6xl font-bold text-center mb-6 tracking-tight ${theme === 'light' ? 'text-black' : 'text-white'}`}
         >
           INITIATE <span className="text-[var(--primary)]">CONTACT</span>
         </motion.h2>
@@ -71,7 +75,7 @@ export function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg md:text-xl text-center text-[#939393] max-w-3xl mx-auto mb-20 font-light"
+          className={`text-lg md:text-xl text-center max-w-3xl mx-auto mb-20 font-light ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`}
         >
           Open channels for collaboration and inquiry.
         </motion.p>
@@ -90,22 +94,22 @@ export function Contact() {
               whileHover={{ y: -5 }}
               className="group relative block"
             >
-              <div className="relative h-full p-8 bg-[#131313] border border-[#333] hover:border-[var(--primary)] transition-all duration-300">
+              <div className={`relative h-full p-8 ${theme === 'light' ? 'bg-white border border-gray-300' : 'bg-[#131313] border border-[#333]'} hover:border-[var(--primary)] transition-all duration-300`}>
                 {/* Icon */}
-                <div className="w-12 h-12 flex items-center justify-center mb-6 border border-[#333] bg-[#1a1a1a] group-hover:bg-[var(--primary)] group-hover:text-[#131313] group-hover:border-[var(--primary)] transition-all duration-300">
-                  <link.icon className="w-5 h-5 text-[#939393] group-hover:text-[#131313]" />
+                <div className={`w-12 h-12 flex items-center justify-center mb-6 border ${theme === 'light' ? 'border-gray-300 bg-gray-50 group-hover:bg-[var(--primary)] group-hover:text-[#131313] group-hover:border-[var(--primary)]' : 'border-[#333] bg-[#1a1a1a] group-hover:bg-[var(--primary)] group-hover:text-[#131313] group-hover:border-[var(--primary)]'} transition-all duration-300`}>
+                  <link.icon className={`w-5 h-5 ${theme === 'light' ? 'text-gray-700 group-hover:text-[#131313]' : 'text-[#939393] group-hover:text-[#131313]'}`} />
                 </div>
 
                 {/* Content */}
                 <div className="space-y-2 mb-4">
-                  <h3 className="text-lg font-bold text-white font-mono uppercase">{link.name}</h3>
-                  <p className="text-sm text-[#939393]">{link.description}</p>
-                  <p className="text-xs font-mono text-[var(--primary)] mt-2 opacity-70 group-hover:opacity-100 transition-opacity">{link.handle}</p>
+                  <h3 className={`text-lg font-bold font-mono uppercase ${theme === 'light' ? 'text-black' : 'text-white'}`}>{link.name}</h3>
+                  <p className={`text-sm ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`}>{link.description}</p>
+                  <p className={`text-xs font-mono mt-2 opacity-70 group-hover:opacity-100 transition-opacity ${theme === 'light' ? 'text-[var(--primary)]' : 'text-[var(--primary)]'}`}>{link.handle}</p>
                 </div>
 
                 {/* Arrow indicator */}
                 <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <ArrowUpRight className="w-5 h-5 text-[var(--primary)]" />
+                  <ArrowUpRight className={`w-5 h-5 ${theme === 'light' ? 'text-[var(--primary)]' : 'text-[var(--primary)]'}`} />
                 </div>
               </div>
             </motion.a>

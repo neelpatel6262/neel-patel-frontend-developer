@@ -61,17 +61,17 @@ export default function App() {
         <main className="relative z-10 flex flex-col gap-0 md:gap-0 pb-24">
           <Hero theme={theme} />
           <div className={`border-t ${theme === 'light' ? 'border-gray-300' : 'border-[#333]'}`} />
-          <About />
+          <About theme={theme} />
           <div className={`border-t ${theme === 'light' ? 'border-gray-300' : 'border-[#333]'}`} />
-          <VibeCodingProject />
+          <VibeCodingProject theme={theme} />
           <div className={`border-t ${theme === 'light' ? 'border-gray-300' : 'border-[#333]'}`} />
-          <Projects />
+          <Projects theme={theme} />
           <div className={`border-t ${theme === 'light' ? 'border-gray-300' : 'border-[#333]'}`} />
-          <NotionSection />
+          <NotionSection theme={theme} />
           <div className={`border-t ${theme === 'light' ? 'border-gray-300' : 'border-[#333]'}`} />
-          <Blog />
+          <Blog theme={theme} />
           <div className={`border-t ${theme === 'light' ? 'border-gray-300' : 'border-[#333]'}`} />
-          <Contact />
+          <Contact theme={theme} />
         </main>
 
         {/* Footer */}

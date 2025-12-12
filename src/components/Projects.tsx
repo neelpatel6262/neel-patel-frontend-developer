@@ -3,7 +3,11 @@ import { useInView } from 'motion/react';
 import { useRef } from 'react';
 import { ExternalLink, ArrowUpRight } from 'lucide-react';
 
-export function Projects() {
+interface ProjectsProps {
+  theme?: 'light' | 'dark';
+}
+
+export function Projects({ theme = 'dark' }: ProjectsProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
@@ -29,7 +33,7 @@ export function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-24 px-4 md:px-8 relative bg-[#131313]">
+    <section id="projects" className={`py-24 px-4 md:px-8 relative ${theme === 'light' ? 'bg-white' : 'bg-[#131313]'}`}>
       <div className="max-w-7xl mx-auto relative z-10" ref={ref}>
         {/* Section badge */}
         <motion.div
@@ -38,9 +42,9 @@ export function Projects() {
           transition={{ duration: 0.6 }}
           className="flex justify-center mb-8"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#333] bg-[#1a1a1a]">
+          <div className={`inline-flex items-center gap-2 px-3 py-1 border ${theme === 'light' ? 'border-gray-300 bg-gray-50' : 'border-[#333] bg-[#1a1a1a]'}`}>
             <div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)]" />
-            <span className="text-xs font-mono uppercase tracking-widest text-[#939393]">Selected Works</span>
+            <span className={`text-xs font-mono uppercase tracking-widest ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`}>Selected Works</span>
           </div>
         </motion.div>
 
@@ -48,7 +52,7 @@ export function Projects() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl md:text-6xl font-bold text-center mb-20 tracking-tight text-white"
+          className={`text-4xl md:text-6xl font-bold text-center mb-20 tracking-tight ${theme === 'light' ? 'text-black' : 'text-white'}`}
         >
           FEATURED <span className="text-[var(--primary)]">PROJECTS</span>
         </motion.h2>
@@ -66,19 +70,19 @@ export function Projects() {
               whileHover={{ y: -5 }}
               className="group block h-full"
             >
-              <div className="relative h-full p-8 bg-[#131313] border border-[#333] hover:border-[var(--primary)] transition-all duration-300 flex flex-col">
+              <div className={`relative h-full p-8 ${theme === 'light' ? 'bg-white border border-gray-300' : 'bg-[#131313] border border-[#333]'} hover:border-[var(--primary)] transition-all duration-300 flex flex-col`}>
                 {/* Hover Effect Background */}
                 <div className="absolute inset-0 bg-[var(--primary)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="flex items-start justify-between gap-3 mb-6">
-                    <h3 className="text-xl font-bold text-white group-hover:text-[var(--primary)] transition-colors duration-300 font-mono uppercase tracking-tight">
+                    <h3 className={`text-xl font-bold group-hover:text-[var(--primary)] transition-colors duration-300 font-mono uppercase tracking-tight ${theme === 'light' ? 'text-black' : 'text-white'}`}>
                       {project.title}
                     </h3>
-                    <ArrowUpRight className="w-5 h-5 text-[#939393] group-hover:text-[var(--primary)] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 flex-shrink-0" />
+                    <ArrowUpRight className={`w-5 h-5 group-hover:text-[var(--primary)] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 flex-shrink-0 ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`} />
                   </div>
                   
-                  <p className="text-[#939393] leading-relaxed mb-8 flex-grow font-light">
+                  <p className={`leading-relaxed mb-8 flex-grow font-light ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`}>
                     {project.description}
                   </p>
                   
@@ -87,7 +91,7 @@ export function Projects() {
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 text-xs font-mono uppercase tracking-wider border border-[#333] text-[#939393] bg-[#1a1a1a]"
+                        className={`px-2 py-1 text-xs font-mono uppercase tracking-wider border ${theme === 'light' ? 'border-gray-300 text-gray-700 bg-gray-50' : 'border-[#333] text-[#939393] bg-[#1a1a1a]'}`}
                       >
                         {tech}
                       </span>

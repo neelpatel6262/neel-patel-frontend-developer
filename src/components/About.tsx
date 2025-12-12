@@ -3,7 +3,11 @@ import { useInView } from 'motion/react';
 import { useRef } from 'react';
 import { Code2, Palette, Zap, Heart } from 'lucide-react';
 
-export function About() {
+interface AboutProps {
+  theme?: 'light' | 'dark';
+}
+
+export function About({ theme = 'dark' }: AboutProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
@@ -15,7 +19,7 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-24 px-4 md:px-8 relative bg-[#131313]">
+    <section id="about" className={`py-24 px-4 md:px-8 relative ${theme === 'light' ? 'bg-white' : 'bg-[#131313]'}`}>
       <div className="max-w-7xl mx-auto relative z-10" ref={ref}>
         {/* Section badge */}
         <motion.div
@@ -24,9 +28,9 @@ export function About() {
           transition={{ duration: 0.6 }}
           className="flex justify-center mb-8"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#333] bg-[#1a1a1a]">
+          <div className={`inline-flex items-center gap-2 px-3 py-1 border ${theme === 'light' ? 'border-gray-300 bg-gray-50' : 'border-[#333] bg-[#1a1a1a]'}`}>
             <div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)]" />
-            <span className="text-xs font-mono uppercase tracking-widest text-[#939393]">About Me</span>
+            <span className={`text-xs font-mono uppercase tracking-widest ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`}>About Me</span>
           </div>
         </motion.div>
 
@@ -34,7 +38,7 @@ export function About() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl md:text-6xl font-bold text-center mb-6 tracking-tight text-white"
+          className={`text-4xl md:text-6xl font-bold text-center mb-6 tracking-tight ${theme === 'light' ? 'text-black' : 'text-white'}`}
         >
           PURPOSE & <span className="text-[var(--primary)]">PASSION</span>
         </motion.h2>
@@ -43,7 +47,7 @@ export function About() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg md:text-xl text-center text-[#939393] max-w-3xl mx-auto mb-20 font-light"
+          className={`text-lg md:text-xl text-center max-w-3xl mx-auto mb-20 font-light ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`}
         >
           Bridging the gap between raw logic and creative expression.
         </motion.p>
@@ -57,14 +61,14 @@ export function About() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="group relative p-8 bg-[#131313] border border-[#333] hover:border-[var(--primary)] transition-colors duration-300"
+              className={`group relative p-8 ${theme === 'light' ? 'bg-white border border-gray-300' : 'bg-[#131313] border border-[#333]'} hover:border-[var(--primary)] transition-colors duration-300`}
             >
               <div className="relative">
-                <div className="w-12 h-12 flex items-center justify-center mb-6 border border-[#333] group-hover:border-[var(--primary)] transition-colors duration-300">
-                  <skill.icon className="w-6 h-6 text-[#939393] group-hover:text-[var(--primary)] transition-colors duration-300" />
+                <div className={`w-12 h-12 flex items-center justify-center mb-6 border ${theme === 'light' ? 'border-gray-300 group-hover:border-[var(--primary)]' : 'border-[#333] group-hover:border-[var(--primary)]'} transition-colors duration-300`}>
+                  <skill.icon className={`w-6 h-6 ${theme === 'light' ? 'text-gray-700 group-hover:text-[var(--primary)]' : 'text-[#939393] group-hover:text-[var(--primary)]'} transition-colors duration-300`} />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-3 font-mono uppercase tracking-wide">{skill.title}</h3>
-                <p className="text-sm text-[#939393] leading-relaxed">{skill.description}</p>
+                <h3 className={`text-lg font-bold mb-3 font-mono uppercase tracking-wide ${theme === 'light' ? 'text-black' : 'text-white'}`}>{skill.title}</h3>
+                <p className={`text-sm leading-relaxed ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`}>{skill.description}</p>
               </div>
             </motion.div>
           ))}
@@ -77,17 +81,17 @@ export function About() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="relative max-w-4xl mx-auto"
         >
-          <div className="p-8 md:p-12 bg-[#131313] border border-[#333] relative">
+          <div className={`p-8 md:p-12 ${theme === 'light' ? 'bg-white border border-gray-300' : 'bg-[#131313] border border-[#333]'} relative`}>
             {/* Corner accents */}
             <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[var(--primary)]" />
             <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[var(--primary)]" />
             <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-[var(--primary)]" />
             <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-[var(--primary)]" />
             
-            <div className="space-y-6 text-[#939393]">
+            <div className={`space-y-6 ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`}>
               <p className="text-lg leading-relaxed font-light">
-                I'm a passionate <span className="font-medium text-white">Frontend developer</span> and{' '}
-                <span className="font-medium text-white">UI/UX designer</span> who believes in the perfect
+                I'm a passionate <span className={`font-medium ${theme === 'light' ? 'text-black' : 'text-white'}`}>Frontend developer</span> and{' '}
+                <span className={`font-medium ${theme === 'light' ? 'text-black' : 'text-white'}`}>UI/UX designer</span> who believes in the perfect
                 synergy between beautiful design and clean code. My work focuses on creating
                 interfaces that are not only visually stunning but also intuitive and accessible.
               </p>
