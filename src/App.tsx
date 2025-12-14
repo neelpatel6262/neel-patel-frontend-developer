@@ -54,7 +54,7 @@ export default function App() {
         
         {/* Navigation */}
         <Navbar theme={theme} toggleTheme={toggleTheme} />
-        <MobileNav theme={theme} />
+        <MobileNav theme={theme} toggleTheme={toggleTheme} />
         <ContactAside theme={theme} />
 
         {/* Main Content */}

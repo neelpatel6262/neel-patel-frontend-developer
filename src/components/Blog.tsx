@@ -16,8 +16,8 @@ export function Blog({ theme = 'dark' }: BlogProps) {
       title: 'How I Built My Developer Portfolio in the AI Era Without Starting From Scratch',
       description: 'A detailed walkthrough of how I leveraged AI tools to create a standout developer portfolio without starting from a blank canvas.',
       link: 'https://medium.com/@patelneel392003/how-i-built-my-developer-portfolio-in-the-ai-era-without-starting-from-scratch-d872a7280cb3',
-      date: 'Dec 10, 2025',
-      readTime: '5 min read'
+      date: 'Dec 6, 2025',
+      readTime: '6 min read'
     }
   ];
 
