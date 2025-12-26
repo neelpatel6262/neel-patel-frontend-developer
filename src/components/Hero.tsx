@@ -102,7 +102,7 @@ export function Hero({ theme = 'dark' }: HeroProps) {
               href="#contact"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className={`group px-8 py-4 rounded-sm font-mono uppercase tracking-widest transition-all duration-300 min-w-[200px] ${theme === 'light' ? 'border border-gray-300 bg-transparent text-black hover:border-black' : 'border border-[#333] bg-transparent text-white hover:border-white'}`}
+              className={`group px-8 py-4 rounded-sm font-mono uppercase tracking-widest transition-all duration-300 min-w-[200px] ${theme === 'light' ? 'border border-gray-300 bg-transparent text-black hover:border-white' : 'border border-[#333] bg-transparent text-white hover:border-white'}`}
             >
               <div className="flex items-center justify-center gap-3">
                 <Sparkles className={`w-4 h-4 transition-colors ${theme === 'light' ? 'text-gray-700 group-hover:text-black' : 'text-[#939393] group-hover:text-white'}`} />
