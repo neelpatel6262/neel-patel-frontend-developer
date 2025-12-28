@@ -40,7 +40,7 @@ export function MobileNav({ theme = 'dark', toggleTheme }: MobileNavProps) {
       initial={{ y: 100 }}
       animate={{ y: 0 }}
       transition={{ type: 'spring', stiffness: 120, damping: 25 }}
-      className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-full flex justify-center px-4"
+      className="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-full flex justify-center px-4"
       role="navigation"
       aria-label="Main navigation"
     >
