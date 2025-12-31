@@ -84,7 +84,7 @@ export default function App() {
               transition={{ duration: 0.6 }}
               className={`text-sm font-mono uppercase tracking-widest ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`}
             >
-              © 2025 Neel Patel. <span className={theme === 'light' ? 'text-gray-500' : 'text-[#555]'}>All Systems Nominal.</span>
+              © 2026 Neel Patel. <span className={theme === 'light' ? 'text-gray-500' : 'text-[#555]'}>All Systems Nominal.</span>
             </motion.div>
 
             <motion.div

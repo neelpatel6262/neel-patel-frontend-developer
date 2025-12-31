@@ -18,6 +18,13 @@ export function Blog({ theme = 'dark' }: BlogProps) {
       link: 'https://medium.com/@patelneel392003/how-i-built-my-developer-portfolio-in-the-ai-era-without-starting-from-scratch-d872a7280cb3',
       date: 'Dec 6, 2025',
       readTime: '6 min read'
+    },
+    {
+      title: 'The Art of Writing Prompts That Actually Work',
+      description: 'Clear prompts create better AI results. This article shows how to write prompts that actually work using real projects and practical examples.',
+      link: 'https://medium.com/@patelneel392003/the-art-of-writing-prompts-that-actually-work-737fe1a3daa4',
+      date: 'Dec 31, 2025',
+      readTime: '4 min read'
     }
   ];
 
