@@ -12,10 +12,10 @@ export function About({ theme = 'dark' }: AboutProps) {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const skills = [
-    { icon: Code2, title: 'Frontend Dev', description: 'Building responsive web applications' },
-    { icon: Palette, title: 'UI/UX Design', description: 'Creating intuitive and beautiful user interfaces' },
-    { icon: Zap, title: 'Performance', description: 'Optimized and fast user experiences' },
-    { icon: Heart, title: 'User-Centric', description: 'Design thinking and empathy-driven' },
+    { icon: Code2, title: 'REACT DEVELOPMENT', description: 'Scalable components, clean architecture' },
+    { icon: Palette, title: 'FIGMA TO CODE', description: 'Pixel-perfect design implementation' },
+    { icon: Zap, title: 'RESPONSIVE & FAST', description: 'Optimized for performance, fast load times' },
+    { icon: Heart, title: 'USER-CENTRIC', description: 'Beautiful interfaces that solve real problems' },
   ];
 
   return (
@@ -74,36 +74,6 @@ export function About({ theme = 'dark' }: AboutProps) {
           ))}
         </div>
 
-        {/* Main content card */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="relative max-w-4xl mx-auto"
-        >
-          <div className={`p-8 md:p-12 ${theme === 'light' ? 'bg-white border border-gray-300' : 'bg-[#131313] border border-[#333]'} relative`}>
-            {/* Corner accents */}
-            <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[var(--primary)]" />
-            <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[var(--primary)]" />
-            <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-[var(--primary)]" />
-            <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-[var(--primary)]" />
-            
-            <div className={`space-y-6 ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`}>
-              <p className="text-lg leading-relaxed font-light">
-                I'm a passionate <span className={`font-medium ${theme === 'light' ? 'text-black' : 'text-white'}`}>Frontend developer</span> and{' '}
-                <span className={`font-medium ${theme === 'light' ? 'text-black' : 'text-white'}`}>UI/UX designer</span> who believes in the perfect
-                synergy between beautiful design and clean code. My work focuses on creating
-                interfaces that are not only visually stunning but also intuitive and accessible.
-              </p>
-              <p className="text-lg leading-relaxed font-light">
-                With a keen eye for detail and a deep understanding of user behavior, I craft
-                experiences that delight users while solving real problems. Whether it's designing
-                a seamless workflow or building a responsive web application, I bring creativity
-                and technical expertise to every project.
-              </p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

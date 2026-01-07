@@ -60,7 +60,7 @@ export function Hero({ theme = 'dark' }: HeroProps) {
           >
             <div className={`flex items-center gap-3 ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`}>
              <Code2 className="w-5 h-5 text-[var(--primary)]" />
-              <span className="text-lg font-mono">Frontend Developer</span>
+              <span className="text-lg font-mono">ReactJs Developer</span>
             </div>
             <div className={`w-1 h-1 ${theme === 'light' ? 'bg-gray-300' : 'bg-[#333]'}`} />
             <div className={`flex items-center gap-3 ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`}>
@@ -76,7 +76,7 @@ export function Hero({ theme = 'dark' }: HeroProps) {
             transition={{ duration: 0.8, delay: 0.6 }}
             className={`text-xl max-w-2xl mx-auto mb-16 leading-relaxed font-light ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`}
           >
-            Forging digital products with precision and purpose.
+            I turn design into lightning-fast React applications. Pixel-perfect UI, scalable components, clean code—built to perform, designed to delight.
           </motion.p>
 
           {/* CTA Buttons */}
