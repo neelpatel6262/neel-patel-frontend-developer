@@ -45,9 +45,6 @@ export function Hero({ theme = 'dark' }: HeroProps) {
           >
             <h1 className={`text-6xl md:text-8xl lg:text-9xl font-bold mb-8 tracking-tighter ${theme === 'light' ? 'text-black' : 'text-white'}`}>
               <span className="block">NEEL PATEL</span>
-              <span className={`block text-4xl md:text-6xl lg:text-7xl mt-4 font-normal ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`}>
-                DESIGN & ENGINEERING
-              </span>
             </h1>
           </motion.div>
 
