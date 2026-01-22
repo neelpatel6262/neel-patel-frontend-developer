@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
-import { ExternalLink, ArrowUpRight } from 'lucide-react';
+import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
 
 interface ProjectsProps {
   theme?: 'light' | 'dark';
@@ -16,20 +16,24 @@ export function Projects({ theme = 'dark' }: ProjectsProps) {
       title: 'Task Manager',
       description: 'Your tasks are stored in your browser (localStorage). Your data will persist until your computer explodes or you delete your browser.',
       tech: ['HTML5', 'CSS3', 'Vanilla JavaScript'],
-      link: 'https://task-manager-eight-wheat-77.vercel.app/',
+      github: 'https://github.com/neelpatel6262/task-manager',
+      vercel: 'https://task-manager-eight-wheat-77.vercel.app/',
     },
     {
       title: 'AGNCI Webflow Template',
       description: 'A minimal and elegant portfolio website featuring smooth transitions and responsive design.',
       tech: ['HTML5', 'CSS3', 'Responsive Website'],
-      link: 'https://agnci-webflow-html-template.vercel.app/',
+      github: 'https://github.com/neelpatel6262/AGNCI-Webflow-HTML-Template',
+      vercel: 'https://agnci-webflow-html-template.vercel.app/',
     },
     {
       title: 'ElectrifyLabs Landing Page',
       description: 'A static website built with pure HTML5 and CSS3, created as a practice project to improve design-to-code conversion skills.',
       tech: ['HTML5', 'CSS3', 'Using My Own Figma Design'],
-      link: 'https://electrifylabs-home-page.vercel.app/',
+      github: 'https://github.com/neelpatel6262/electrifylabs-home-page',
+      vercel: 'https://electrifylabs-home-page.vercel.app/',
     },
+
   ];
 
   return (
@@ -59,32 +63,49 @@ export function Projects({ theme = 'dark' }: ProjectsProps) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <motion.a
+            <motion.div
               key={project.title}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="group block h-full"
+              className="block h-full"
             >
               <div className={`relative h-full p-8 ${theme === 'light' ? 'bg-white border border-gray-300' : 'bg-[#131313] border border-[#333]'} hover:border-[var(--primary)] transition-all duration-300 flex flex-col`}>
-                {/* Hover Effect Background */}
-                <div className="absolute inset-0 bg-[var(--primary)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
                 
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="flex items-start justify-between gap-3 mb-6">
-                    <h3 className={`text-xl font-bold group-hover:text-[var(--primary)] transition-colors duration-300 font-mono uppercase tracking-tight ${theme === 'light' ? 'text-black' : 'text-white'}`}>
+                    <h3 className={`text-xl font-bold transition-colors duration-300 font-mono uppercase tracking-tight ${theme === 'light' ? 'text-black' : 'text-white'}`}>
                       {project.title}
                     </h3>
-                    <ArrowUpRight className={`w-5 h-5 group-hover:text-[var(--primary)] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 flex-shrink-0 ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`} />
+                    <ArrowUpRight className={`w-5 h-5 transition-all duration-300 flex-shrink-0 ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`} />
                   </div>
                   
                   <p className={`leading-relaxed mb-8 flex-grow font-light ${theme === 'light' ? 'text-gray-700' : 'text-[#939393]'}`}>
                     {project.description}
                   </p>
+                  
+                  {/* Links */}
+                  <div className="flex gap-4 mb-4">
+                    <a 
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex items-center gap-2 px-4 py-2 rounded border transition-all duration-300 ${theme === 'light' ? 'border-gray-300 text-gray-700 hover:bg-[var(--primary)] hover:text-[#131313]' : 'border-[#333] text-[#939393] hover:bg-[var(--primary)] hover:text-[#131313]'}`}
+                    >
+                      <Github className="w-4 h-4" />
+                      <span className="text-sm font-mono uppercase tracking-wider">Code</span>
+                    </a>
+                    <a 
+                      href={project.vercel}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex items-center gap-2 px-4 py-2 rounded border transition-all duration-300 ${theme === 'light' ? 'border-gray-300 text-gray-700 hover:bg-[var(--primary)] hover:text-[#131313]' : 'border-[#333] text-[#939393] hover:bg-[var(--primary)] hover:text-[#131313]'}`}
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      <span className="text-sm font-mono uppercase tracking-wider">Live</span>
+                    </a>
+                  </div>
                   
                   {/* Tech stack */}
                   <div className="flex flex-wrap gap-2 mt-auto">
@@ -99,7 +120,7 @@ export function Projects({ theme = 'dark' }: ProjectsProps) {
                   </div>
                 </div>
               </div>
-            </motion.a>
+            </motion.div>
           ))}
         </div>
       </div>

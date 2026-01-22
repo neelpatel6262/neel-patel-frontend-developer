@@ -18,7 +18,7 @@ export function NotionSection({ theme = 'dark' }: NotionSectionProps) {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className={`relative p-12 md:p-16 ${theme === 'light' ? 'bg-white border border-gray-300' : 'bg-[#131313] border border-[#333]'} shadow-lg`}
+          className={`relative p-12 md:p-16 ${theme === 'light' ? 'bg-white border border-gray-300' : 'bg-[#131313] border border-[#333]'} hover:border-[var(--primary)] transition-all duration-300 shadow-lg`}
         >
            {/* Decorative pattern */}
            <div className="absolute inset-0 opacity-[0.02]" 

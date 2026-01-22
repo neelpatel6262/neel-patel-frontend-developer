@@ -63,12 +63,10 @@ export function Blog({ theme = 'dark' }: BlogProps) {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-              whileHover={{ y: -5 }}
               className="group block"
             >
               <div className={`relative p-8 ${theme === 'light' ? 'bg-white border border-gray-300' : 'bg-[#131313] border border-[#333]'} hover:border-[var(--primary)] transition-all duration-300`}>
-                {/* Hover Effect Background */}
-                <div className="absolute inset-0 bg-[var(--primary)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Hover Effect Background - Removed to match other sections */}
                 
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="flex items-start justify-between gap-3 mb-6">

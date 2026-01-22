@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
-import { ExternalLink, Sparkles, Zap } from 'lucide-react';
+import { ExternalLink, Github, Zap } from 'lucide-react';
 
 interface VibeCodingProjectProps {
   theme?: 'light' | 'dark';
@@ -36,15 +36,11 @@ export function VibeCodingProject({ theme = 'dark' }: VibeCodingProjectProps) {
           FEATURED <span className="text-[var(--primary)]">EXPERIENCE</span>
         </motion.h2>
 
-        <motion.a
-          href="https://dopamine-menu-app.vercel.app/"
-          target="_blank"
-          rel="noopener noreferrer"
+        <div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.3 }}
-          whileHover={{ y: -5 }}
-          className="group block max-w-5xl mx-auto"
+          className="max-w-5xl mx-auto"
         >
           <div className={`relative p-12 ${theme === 'light' ? 'bg-white border border-gray-300' : 'bg-[#131313] border border-[#333]'} hover:border-[var(--primary)] transition-all duration-500`}>
              {/* Corner accents */}
@@ -81,10 +77,24 @@ export function VibeCodingProject({ theme = 'dark' }: VibeCodingProjectProps) {
                 </div>
 
                 <div className="flex items-center gap-3 pt-4">
-                  <div className={`px-8 py-4 border border-[var(--primary)] text-[var(--primary)] font-mono uppercase tracking-widest flex items-center gap-3 hover:bg-[var(--primary)] hover:text-[#131313] transition-all duration-300 cursor-pointer ${theme === 'light' ? 'bg-white' : 'bg-[#131313]'}`}>
-                    <span>Initialize</span>
+                  <a 
+                    href="https://github.com/neelpatel6262/dopamine-menu-app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`px-6 py-4 border border-[var(--primary)] text-[var(--primary)] font-mono uppercase tracking-widest flex items-center gap-3 transition-all duration-300 ${theme === 'light' ? 'bg-white hover:bg-[var(--primary)] hover:text-[#131313]' : 'bg-[#131313] hover:bg-[var(--primary)] hover:text-[#131313]'}`}
+                  >
+                    <Github className="w-4 h-4" />
+                    <span>Code</span>
+                  </a>
+                  <a 
+                    href="https://dopamine-menu-app.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`px-6 py-4 border border-[var(--primary)] text-[var(--primary)] font-mono uppercase tracking-widest flex items-center gap-3 transition-all duration-300 ${theme === 'light' ? 'bg-white hover:bg-[var(--primary)] hover:text-[#131313]' : 'bg-[#131313] hover:bg-[var(--primary)] hover:text-[#131313]'}`}
+                  >
                     <ExternalLink className="w-4 h-4" />
-                  </div>
+                    <span>Live</span>
+                  </a>
                 </div>
               </div>
 
@@ -123,7 +133,7 @@ export function VibeCodingProject({ theme = 'dark' }: VibeCodingProjectProps) {
               </div>
             </div>
           </div>
-        </motion.a>
+        </div>
       </div>
     </section>
   );
