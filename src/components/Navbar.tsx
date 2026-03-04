@@ -10,7 +10,7 @@ export function Navbar({ theme, toggleTheme }: NavbarProps) {
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Works', href: '#vibe-project' },
+    { name: 'Works', href: '#aetherfield-project' },
     { name: 'Blog', href: '#blog' },
     { name: 'Contact', href: '#contact' },
   ];

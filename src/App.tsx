@@ -7,7 +7,7 @@ import { MobileNav } from './components/MobileNav';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Projects } from './components/Projects';
-import { VibeCodingProject } from './components/VibeCodingProject';
+import { AetherfieldProject } from './components/AetherfieldProject';
 import { NotionSection } from './components/NotionSection';
 import { Contact } from './components/Contact';
 import { ContactAside } from './components/ContactAside';
@@ -63,7 +63,7 @@ export default function App() {
           <div className={`border-t ${theme === 'light' ? 'border-gray-300' : 'border-[#333]'}`} />
           <About theme={theme} />
           <div className={`border-t ${theme === 'light' ? 'border-gray-300' : 'border-[#333]'}`} />
-          <VibeCodingProject theme={theme} />
+          <AetherfieldProject theme={theme} />
           <div className={`border-t ${theme === 'light' ? 'border-gray-300' : 'border-[#333]'}`} />
           <Projects theme={theme} />
           <div className={`border-t ${theme === 'light' ? 'border-gray-300' : 'border-[#333]'}`} />
